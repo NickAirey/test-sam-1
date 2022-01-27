@@ -22,3 +22,4 @@ jobs:
         aws-region: ap-southeast-2
     - run: aws sts get-caller-identity
     - run: sam deploy --no-confirm-changeset sam deploy --resolve-s3 --stack-name sam-cfn --capabilities CAPABILITY_IAM
+    
