@@ -11,6 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - run: SAM_CLI_TELEMETRY=0
     - run: sam build
     - uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -18,4 +19,5 @@ jobs:
         role-duration-seconds: 900
         aws-region: ap-southeast-2
     - run: aws sts get-caller-identity
+    - run: sam deploy --no-confirm-changeset
   
